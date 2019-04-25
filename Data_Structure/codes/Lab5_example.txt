@@ -1,0 +1,13 @@
+delete 10 
+insert 10 
+insert 5 
+list 
+insert 30 
+search 5
+delete 5
+list
+PrintNth 3
+PrintLast
+insert 40
+InvertList
+exit

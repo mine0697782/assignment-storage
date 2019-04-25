@@ -1,0 +1,40 @@
+3주차 목요일에 라인플롯 콘솔 결과, 느낀점 출력해서 제출하기- Ecampus에 링크 업로드
+
+단위원(반지름이 1인 원)에서 Y값의 좌표는 Sin함수와 같다
+0도 - Y=0 / 90도 - Y=1 / 180도 - Y=0 / 270도 Y=1
+X값은 Cos과 일치
+탄젠트 하이퍼볼릭 함수 값은 학기말까지 계속 나옴
+**약 한달간(19/03/19~) 손실함수(loss function)를 만드는 과정을 연습함
+3-1 p.65 주황박스 공식 중요
+(단위원의)"주축" = 지름
+
+Hyperbolic function wiki ===== https://en.wikipedia.org/wiki/Hyperbolic_function
+
+
+=================
+
+4-1 p.5 - np.linspace (시작점, 끝점, 중간점의 갯수)
+nb = Number of Bracket(??) : 근이 존재하는 구간 (4주차2차시 증분법 p.39, incremental1.py)
+np.hstack(array) : array를 수평으로 정렬한다 (수평 스택에 쌓는다)
+array.reshape(nb, num) : array를 nb만큼 num개씩 묶는다. (증분법 p.39)
+증분법의 단점 : 증분(점)의 갯수에 따라 근을 찾지 못할수도 있음 (incremental1 np.linspace(3, 6, 50 or 100)
+Fitting -
+	Normal Fitting : 적절한 수의 증분으로 모든 근을 발견하는 것 (linspace(3, 6, 100))
+	Under Fitting : 증분의 수가 적어서 근을 모두 발견하지 못하는 것 (linspace(3, 6, 50))
+	Over Fitting : 지나치게 많은 Resource(증분)을 사용한 경우 (linspace(3, 6, 300))
+
+========= 19/03/28 다음시간 또다른 구간법
+>>> 구간법 : 증분법, 이분법, 가위치법 - 해의 범위를 구하는 3가지 방법
+>>> 개방법 : Newton-Raphson, Secant Method, Modified Secant Method
+수치해석은 근삿값을 구하는 것. 근사 미분, 근사 적분 등.
+========= 19/04/02
+가위치법이 뭔지 모르겠다. 용준이한테 물어보자 ***
+======== 19/04/04
+np.sech 은 지원하지않음, np.cosh(x)**(-1) 로 구하면 됨
+미분하는 함수 https://datascienceschool.net/view-notebook/5f5f4a966f9042efa43d711008df9c0b/
+======== 19/04/09
+tnsrksqusghkdbfdl tjdsmddl whgek.
+middle term range : 1-1 ~ 7-216
+======== 19/04/16
+cktjsxor = chlwjrghk 
+vusalqns???
