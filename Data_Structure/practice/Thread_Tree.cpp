@@ -9,9 +9,11 @@ char prec[4][2] = {{'*', 2},{'/', 2},{'+', 1},{'-', 1}};
 class Node {
     private:
         char data; 
-        int prio;
+        //int prio;
         Node *left; 
         Node *right;
+        int left_thread;
+        int right_thread;
         Node(char data) {this->data = data; left = 0; right = 0;}
     friend class Tree;
 };
@@ -31,7 +33,6 @@ class Tree {
         int evalTree(Node *p);
         Node *getroot();
         void DrawTree(Node *p, int level);
-        void parentheses(Node *p);
 };
 
 void Tree::buildTree(char *input){
@@ -82,31 +83,25 @@ void Tree::input_operator(Node *new_node) {
 
 void Tree::inorder(Node *p){
     if (p) {
-        //if (p->left && p->right) {cout << "( ";}
         inorder(p->left);
         cout << p->data << " ";
         inorder(p->right);
-        //if (p->left && p->right) {cout << ") ";}
     }
 }
 
 void Tree::postorder(Node *p){
     if (p) {
-        //if (p->right && p->left) {cout << "( ";}
         postorder(p->left);
         postorder(p->right);
         cout << p->data << " ";
-        //if (p->right && p->left) {cout << ") ";}
     }
 }
 
 void Tree::preorder(Node *p){
     if (p) {
-        //if (p->right && p->left) {cout << "( ";}
         cout << p->data << " ";
         preorder(p->left);
         preorder(p->right);
-        //if (p->right && p->left) {cout << ") ";}
     }
 }
 
@@ -133,11 +128,13 @@ int Tree::evalTree(Node *p){
                     value = left / right;
                     break;
             }
+            //cout << "left : " << left << " right : " << right << " return : " << value << endl;
         }
     }
     else {
         cout << "Empty tree" << endl;
     }
+    //cout << value << endl;
 
     return value;
 }
@@ -167,16 +164,8 @@ void Tree::DrawTree(Node *p, int level) {
         
         cout << endl;
         DrawTree(p->left, level + 1);
-    }
-}
-
-void Tree::parentheses(Node *p){
-    if (p) {
-        if (p->left && p->right) {cout << "( ";}
-        parentheses(p->left);
-        cout << p->data << " ";
-        parentheses(p->right);
-        if (p->left && p->right) {cout << ") ";}
+        //cout << endl;
+        
     }
 }
 
@@ -204,10 +193,6 @@ int main() {
 
     cout << "  Evaluation : " << tree.evalTree(tree.getroot()) << endl << endl;
     
-    cout << "  Parentheses \t: ";
-    tree.parentheses(tree.getroot());
-    cout << endl << endl;
-
     cout << "Tree Structure" << endl << endl;
     tree.DrawTree(tree.getroot(), 1);
     cout << endl;

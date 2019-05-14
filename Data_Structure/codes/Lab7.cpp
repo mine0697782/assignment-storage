@@ -208,9 +208,9 @@ int main() {
     tree.parentheses(tree.getroot());
     cout << endl << endl;
 
-    cout << "Tree Structure" << endl << endl;
-    tree.DrawTree(tree.getroot(), 1);
-    cout << endl;
+    //cout << "Tree Structure" << endl << endl;
+    //tree.DrawTree(tree.getroot(), 1);
+    //cout << endl;
 
     return 0;
 }
