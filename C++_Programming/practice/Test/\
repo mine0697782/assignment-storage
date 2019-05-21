@@ -1,0 +1,25 @@
+#include<iostream>
+
+using namespace std;
+
+class Test{
+    public:
+        int data;
+
+        Test(int num){data = num;}
+        //print(){cout << data << endl;} 
+};
+
+main(){
+    
+    Test arr[3];
+    for (int i=0; i<3; i++){
+        arr[i] = new Test(i+1);
+    }
+
+    for (int i=0; i<3; i++){
+        //arr[i]->print();
+        cout << arr->data << endl;
+    }
+    return 0;
+}
